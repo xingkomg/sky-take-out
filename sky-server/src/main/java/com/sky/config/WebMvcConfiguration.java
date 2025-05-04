@@ -69,6 +69,10 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        //将图片保存在本地，而不是在阿里云上面
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("file:E:/资料/资料/day01/后端初始工程/sky-take-out/sky-server/src/main/resources/");
     }
 
     /**
