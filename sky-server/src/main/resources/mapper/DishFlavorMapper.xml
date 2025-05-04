@@ -9,6 +9,12 @@
             (#{df.dishId},#{df.name},#{df.value})
         </foreach>
     </insert>
+    <delete id="deleteByDishIds">
+        delete from dish_flavor where dish_id in
+        <foreach collection="dishIds" open="(" close=")" separator="," item="dishId">
+            #{dishId}
+        </foreach>
+    </delete>
     <select id="pageQuery" resultType="com.sky.vo.DishVO">
         select d.*,c.name as categoryName from dish d left outer join category c on d.category_id = c.id
         <where>
