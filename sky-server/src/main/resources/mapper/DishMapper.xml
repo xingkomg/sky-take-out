@@ -17,10 +17,25 @@
             #{id}
         </foreach>
     </delete>
+    <select id="list" resultType="Dish" parameterType="Dish">
+        select * from dish
+        <where>
+            <if test="name != null">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
     <update id="update">
         update dish
         <set>
-            <if test="name!=null">name =#{name},
+            <if test="name!=null">name =#{name},</if>
             <if test="categoryId!=null"> category_id=#{categoryId},</if>
             <if test="price!=null">price =#{price},</if>
             <if test="image!=null">image =#{image},</if>
@@ -28,7 +43,6 @@
             <if test="status!=null">status =#{status},</if>
             <if test="updateTime!=null">update_time =#{updateTime},</if>
             <if test="updateUser!=null">update_user =#{updateUser}</if>
-        </if>
         </set>
         where id=#{id}
     </update>
