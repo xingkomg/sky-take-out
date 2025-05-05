@@ -22,8 +22,6 @@ import java.util.List;
 public class SetmealController {
     @Autowired
     private StemalService stemalService;
-
-
     /**
      * 新增套餐
      * @param setmealDTO
@@ -36,8 +34,11 @@ public class SetmealController {
         return Result.success();
     }
 
-
-
+    /**
+     * 分页查询套餐信息
+     * @param setmealPageQueryDTO
+     * @return
+     */
     @GetMapping("/page")
     @ApiOperation("分页查询")
     public Result<PageResult> page(SetmealPageQueryDTO setmealPageQueryDTO) {
@@ -59,7 +60,6 @@ public class SetmealController {
 
     /**
      * 根据id查询套餐，用于修改页面回显数据
-     *
      * @param id
      * @return
      */

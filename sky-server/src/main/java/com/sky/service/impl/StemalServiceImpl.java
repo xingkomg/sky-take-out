@@ -35,7 +35,10 @@ public class StemalServiceImpl implements StemalService {
     @Autowired
     private DishMapper dishMapper;
 
-
+    /**
+     * 新增套餐
+     * @param setmealDTO
+     */
     @Override
     public void saveWithDish(SetmealDTO setmealDTO) {
         Setmeal setmeal = new Setmeal();
