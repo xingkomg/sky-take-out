@@ -31,7 +31,7 @@ import java.util.UUID;
 @Api(tags = "文件上传")
 @Slf4j
 public class CommonController {
-    private static String FILE_UPLOAD_PATH = "E:\\资料\\资料\\day01\\后端初始工程\\sky-take-out\\sky-server\\src\\main\\resources\\";
+    private static String FILE_UPLOAD_PATH = "E:\\资料\\资料\\day01\\后端初始工程\\sky-take-out\\sky-server\\src\\main\\resources\\upload\\";
 
     @PostMapping("/upload")
     @ResponseBody
