@@ -49,6 +49,7 @@ public class UserController {
                 .openid(user.getOpenid())
                 .token(jwt)
                 .build();
+
         return Result.success(userLoginVO);
 
 
