@@ -36,4 +36,7 @@ public interface OrderMapper {
             "where number = #{orderNumber}")
     void updateStatus(Integer orderStatus, Integer orderPaidStatus, LocalDateTime check_out_time, String orderNumber);
 
+    @Select("select count(id) from orders where status=#{status} and order_time <#{orderTime}")
+    List<Orders> getByStatusAndOrderTimeLT(Integer status,LocalDateTime orderTime);
+
 }
