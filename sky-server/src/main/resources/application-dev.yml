@@ -7,14 +7,14 @@ sky:
     username: root
     password: asdfghjkl123
   redis:
-    host: 192.168.17.133
+    host: 
     port: 6379
     password: 123456
     database: 0
   wechat:
-    appid: wx5ed29b237c49f6df
-    secret: a914d43d1730e4e8813f07e5f96fb1cd
+    appid: 
+    secret: 
   shop:
     address: 北京市海淀区上地十街10号
   gaode:
-    key: 97e8852771dc517cd48dcfc4d66a2f19
+    key: 
